@@ -1,14 +1,24 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-.App {
-  font-family: Arial, sans-serif;
+
+
+
+
+body, html {
+  height: 100%;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1; /* Чтобы основной контент занимал все доступное пространство */
+}
 .header {
   background-color: #01939a;
   color: white;
@@ -154,9 +164,12 @@
 }
 
 
+
 .footer {
   background-color: #006064;
   color: white;
   text-align: center;
   padding: 20px;
+  width: 100%;
+  margin-top: auto; /* Это гарантирует, что футер всегда будет на низу */
 }
