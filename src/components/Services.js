@@ -1,26 +1,41 @@
 import React from 'react';
+import Slider from "react-slick";
 
+// Список услуг
 const servicesList = [
-  "Инвентаризация выбросов вредных веществ",
+  "Инвентаризация старых вредных веществ",
   "Разработка НДВ",
-  "План мероприятий по уменьшению выбросов",
+  "План мероприятий по уменьшению выбросов в атмосферный воздух",
   "Разработка ПНООЛР",
   "Проект СЗЗ",
   "Оценка риска для здоровья населения",
   "Программа ПЭК",
-  "Сопровождение экологической деятельности",
+  "Сопровождение основной деятельности",
   "Постановка на учет объектов НВОС"
 ];
 
 function Services() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    focusOnSelect: true,
+    variableWidth: false, // Убираем возможность переменной ширины для элементов
+  };
+
   return (
     <section className="services">
       <h2>Наши услуги</h2>
-      <ul>
+      <Slider {...settings}>
         {servicesList.map((service, index) => (
-          <li key={index}>{service}</li>
+          <div className="service-card" key={index}>
+            <h3>{service}</h3>
+          </div>
         ))}
-      </ul>
+      </Slider>
     </section>
   );
 }
